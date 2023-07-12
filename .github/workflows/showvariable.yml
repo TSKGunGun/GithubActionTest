@@ -1,0 +1,11 @@
+name: Show Variables
+on:
+  workflow_dispatch:
+  
+jobs:
+  display-variables:
+    runs-on: ubuntu-latest
+    environment: staging
+    steps:
+      - name: show variable
+        run: echo "Show Env Secret ${{ vars.TEST_SECRET }}"
