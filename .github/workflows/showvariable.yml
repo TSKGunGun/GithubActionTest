@@ -11,3 +11,12 @@ jobs:
         run: |
           echo "Show Env Secret ${{ secrets.TEST_SECRET }}"
           echo "Show Env Variable ${{ vars.TEST_VARIABLE }}"
+  
+  display-variables-prd:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: show variable
+        run: |
+          echo "Show Env Secret ${{ secrets.TEST_SECRET }}"
+          echo "Show Env Variable ${{ vars.TEST_VARIABLE }}"
