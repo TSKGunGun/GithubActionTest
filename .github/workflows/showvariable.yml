@@ -3,11 +3,11 @@ on:
   workflow_dispatch:
   
 jobs:
-  display-variables:
+  display-variables-stg:
     runs-on: ubuntu-latest
     environment: staging
     steps:
       - name: show variable
         run: |
-          echo "Show Env Secret ${{ vars.TEST_SECRET }}"
-          echo "Show Env Secret ${{ vars.TEST_VARIABLE }}"
+          echo "Show Env Secret ${{ secrets.TEST_SECRET }}"
+          echo "Show Env Variable ${{ vars.TEST_VARIABLE }}"
