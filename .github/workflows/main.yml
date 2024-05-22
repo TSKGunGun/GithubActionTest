@@ -1,0 +1,18 @@
+name: GetRepositoryName
+on:
+  workflow_dispatch:
+
+jobs:
+  getreponame:
+    name: getreponame
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "REPOSITORY_NAME=${GITHUB_REPOSITORY#${GITHUB_REPOSITORY_OWNER}/}" >> $GITHUB_ENV
+      
+      - run: repo
+        env:
+          repo: ${{env.REPOSITORY_NAME}}
+      
+          
+
+      
