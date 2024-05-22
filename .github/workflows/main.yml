@@ -11,7 +11,9 @@ jobs:
         run: echo "REPOSITORY_NAME=${GITHUB_REPOSITORY#${GITHUB_REPOSITORY_OWNER}/}" >> $GITHUB_ENV
     
       - name: GetRepositoryName
-        run: echo "s/\/home\/runner\/work\/${ REPOSITORY_NAME }\/${ REPOSITORY_NAME }/\/github\/workspace/g"
+        run: |
+          echo "/home/${REPOSITORY_NAME}"
+          echo "s/\/home\/runner\/work\/${REPOSITORY_NAME}\/${REPOSITORY_NAME}/\/github\/workspace/g"
         env:
           REPOSTIROY_NAME:  ${{ env.REPOSITORY_NAME }}
       
