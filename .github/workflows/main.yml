@@ -7,10 +7,13 @@ jobs:
     name: getreponame
     runs-on: ubuntu-latest
     steps:
+      - name: SetRepositoryName
+        run: echo "REPOSITORY_NAME=${GITHUB_REPOSITORY#${GITHUB_REPOSITORY_OWNER}/}" >> $GITHUB_ENV
+    
       - name: GetRepositoryName
         run: echo "/home/${REPOSITORY_NAME}"
         env:
-          REPOSTIROY_NAME:  ${GITHUB_REPOSITORY#${GITHUB_REPOSITORY_OWNER}/}
+          REPOSTIROY_NAME:  ${{ env.REPOSITORY_NAME }}
       
       
 
