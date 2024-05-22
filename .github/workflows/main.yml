@@ -9,10 +9,6 @@ jobs:
     steps:
       - run: echo "REPOSITORY_NAME=${GITHUB_REPOSITORY#${GITHUB_REPOSITORY_OWNER}/}" >> $GITHUB_ENV
       
-      - run: repo
-        env:
-          repo: ${{env.REPOSITORY_NAME}}
-      
-          
+      - run: echo ${{ env.REPOSITORY_NAME }}
 
       
